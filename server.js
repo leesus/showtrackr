@@ -109,7 +109,12 @@ app.post('/api/shows', function(req, res, next){
   ], function(err, show) {
     if (err) return next(err);
     show.save(function(err) {
-      if (err) return next(err);
+      if (err) {
+        if (err.code == 11000) {
+          return res.send(409, { message: show.name + ' already exists.' });
+        }
+        return next(err);
+      }
       res.send(200);
     });
   });

@@ -9,8 +9,8 @@ angular.module('Showtrackr')
           return $scope.show.subscribers.indexOf($rootScope.currentUser._id) !== -1;
         };
 
-        $scope.subsribe = function(){
-          Subscription.subsribe(show, $rootScope.currentUser).success(function(){
+        $scope.subscribe = function(){
+          Subscription.subscribe(show, $rootScope.currentUser).success(function(){
             $scope.show.subscribers.push($rootScope.currentUser._id);
           });
         };

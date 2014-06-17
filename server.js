@@ -53,7 +53,7 @@ agenda.define('send email alert', function(job, done) {
       return user.email;
     });
 
-    var upcomingEpisode = show.episodes.filter(function(show) {
+    var upcomingEpisode = show.episodes.filter(function(episode) {
       return new Date(episode.firstAired) > new Date();
     })[0];
 

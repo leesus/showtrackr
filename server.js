@@ -102,9 +102,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 86400000 }));
 
-app.locals({
-  environment: app.get('env')
-});
+app.locals.environment = app.get('env');
 
 // auth middleware
 function ensureAuthenticated(req, res, next) {

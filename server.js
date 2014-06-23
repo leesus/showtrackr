@@ -47,7 +47,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, passw
 }));
 
 // agenda tasks
-agenda.define('send email alert', function(job, done) {
+/*agenda.define('send email alert', function(job, done) {
   Show.findOne({ name: job.attrs.data }).populate('subscribers').exec(function(err, show){
     var emails = show.subscribers.map(function(user) {
       return user.email;
@@ -86,7 +86,7 @@ agenda.on('start', function(job) {
 
 agenda.on('complete', function(job) {
   console.log('Job %s finished', job.attrs.name);
-});
+});*/
 
 // all environments
 app.set('port', process.env.PORT || 3000);
